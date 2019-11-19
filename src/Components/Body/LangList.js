@@ -36,6 +36,10 @@ function LangList(props) {
         ],
         [//frameworks
             {
+                title: 'Git',
+                proficiency: 1
+            },
+            {
                 title: 'ReactJS',
                 proficiency: 1,
             },
@@ -43,6 +47,7 @@ function LangList(props) {
                 title: 'Material-UI',
                 proficiency: 1,
             },
+            
         ],
         [//databases
             {
