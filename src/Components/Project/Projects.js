@@ -5,6 +5,11 @@ import { Typography } from '@material-ui/core';
 import ProjectCard from './ProjectCard';
 import Grid from '@material-ui/core/Grid';
 
+/*
+    TODO: Figure out how to show our project contributions
+          Not sure how much stress we need to put on that 
+          but we need to include it somewhere it is visible
+*/
 
 const useStyles = makeStyles(theme => ({
     paperRoot: {
