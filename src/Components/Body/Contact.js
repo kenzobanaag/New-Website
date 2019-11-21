@@ -6,9 +6,11 @@ import EmailIcon from '@material-ui/icons/Email';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
-//import Popover from '@material-ui/core/Popover';
-//import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
-//import {Typography, Button} from '@material-ui/core'
+import Popover from '@material-ui/core/Popover';
+import { Typography } from '@material-ui/core'
+import Container from '@material-ui/core/Container'
+import SubjectIcon from '@material-ui/icons/Subject';
+import Tooltip from '@material-ui/core/Tooltip'
 
 /* 
     TODO: We want a footer like contact section
@@ -37,31 +39,75 @@ function Contact() {
 
     const classes = useStyles();
 
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handleClick = event => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    const open = Boolean(anchorEl);
+    const id = open ? 'simple-popover' : undefined;
+
     return (
         <React.Fragment>
             <div className={classes.root}>
+            <Container maxWidth="sm">
                 <Grid container >
-                    <Grid item sm={4} >
-                        <Link href="https://www.linkedin.com/in/kenzo-banaag-767a3b15b/"  target="_blank" rel="noopener noreferrer">
+                    <Grid item sm={3} >
+                        <Link href="https://www.linkedin.com/in/kenzo-banaag-767a3b15b/" target="_blank" rel="noopener noreferrer">
+                            <IconButton size="large">
+                                <LinkedInIcon fontSize="large" />
+                            </IconButton>
+                        </Link>
+                    </Grid>
+                    <Grid item sm={3}>
+                        <Link href="https://github.com/kenzobanaag" target="_blank" rel="noopener noreferrer">
+                            <IconButton size="large" >
+                                <GitHubIcon fontSize="large" />
+                            </IconButton>
+                        </Link>
+                    </Grid>
+                    <Grid item sm={3}>
+                    <Link href="mailto:kenzobanaag@gmail.com" rel="noopener noreferrer">
                         <IconButton size="large">
-                            <LinkedInIcon fontSize="large"/>
+                            <EmailIcon fontSize="large" onClick={handleClick}/>
                         </IconButton>
                         </Link>
                     </Grid>
-                    <Grid item sm={4}>
-                    <Link href="https://github.com/kenzobanaag"  target="_blank" rel="noopener noreferrer">
-                        <IconButton size="large" >
-                            <GitHubIcon fontSize="large" />
+                    <Grid item sm={3}>
+                    <Link href="/Resume.pdf" target="_blank" rel="noopener noreferrer">
+                        <Tooltip title="Resume">
+                        <IconButton size="large">
+                            <SubjectIcon fontSize="large"/>
                         </IconButton>
+                        </Tooltip>
                         </Link>
-                    </Grid>
-                    <Grid item sm={4}>
-                        <IconButton size="large" >
-                            <EmailIcon fontSize="large" />
-                        </IconButton>
                     </Grid>
                 </Grid>
+                </Container>
             </div>
+            <Popover
+                id={id}
+                open={open}
+                anchorEl={anchorEl}
+                onClose={handleClose}
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'center',
+                }}
+                transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'center',
+                }}
+            >
+                <Typography className={classes.control}>
+                    kenzobanaag@gmail.com
+                </Typography>
+            </Popover>
         </React.Fragment>
     );
 }

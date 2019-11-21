@@ -47,6 +47,10 @@ function LangList(props) {
                 title: 'Material-UI',
                 proficiency: 1,
             },
+            {
+                title: 'Hadoop',
+                proficiency: -1,
+            },
             
         ],
         [//databases
