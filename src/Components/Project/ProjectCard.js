@@ -4,9 +4,15 @@ import { makeStyles } from '@material-ui/core/styles';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import Chip from '@material-ui/core/Chip'
-import IconButton from '@material-ui/core/IconButton'
+import Chip from '@material-ui/core/Chip';
+import IconButton from '@material-ui/core/IconButton';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Tooltip from '@material-ui/core/Tooltip';
+import Collapse from '@material-ui/core/Collapse';
+import clsx from 'clsx';
+import ListItem from '@material-ui/core/ListItem'
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import CodeIcon from '@material-ui/icons/Code'
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -26,11 +32,21 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'left',
     flexWrap: 'wrap',
     '& > *': {
-      margin: theme.spacing(0.5),
+      marginLeft: theme.spacing(1),
+      marginTop: theme.spacing(.5),
+      marginBottom: theme.spacing(.5),
     },
   },
-  rightContent: {
+  expand: {
     float: 'right',
+    transform: 'rotate(0deg)',
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
+      duration: theme.transitions.duration.shortest,
+    }),
+  },
+  expandOpen: {
+    transform: 'rotate(180deg)',
   },
 }));
 
@@ -38,8 +54,13 @@ function ProjectCard(props) {
 
   const classes = useStyles();
   const projectItem = props.item;
+  const [expanded, setExpanded] = React.useState(false);
 
-  var workArray = [];
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
+
+  
 
   const processProjectType = (type) => {
     if (type === 0)
@@ -48,12 +69,33 @@ function ProjectCard(props) {
       return "Personal Project"
   }
 
+  const addTypeTitle = (type) => {
+    if(expanded) {
+      if (type === 0)
+      return(
+        <div>
+          <Typography className={classes.title} color="textSecondary" gutterBottom>
+            My Responsibilities: 
+          </Typography>
+        </div>
+      )
+    else
+      return(
+        <div>
+          <Typography className={classes.title} color="textSecondary" gutterBottom>
+            Important Work: 
+          </Typography>
+        </div>
+      )
+    }
+  }
 
-  const processWork = (workArray) => {
+
+  const processArray = (array) => {
     var lang = [];
-    for (var prop in workArray)
-      if (workArray.hasOwnProperty(prop)) //add to a list?
-        lang.push(workArray[prop])
+    for (var prop in array)
+      if (array.hasOwnProperty(prop)) //add to a list?
+        lang.push(array[prop])
     return lang;
   }
 
@@ -65,7 +107,24 @@ function ProjectCard(props) {
     )))
   }
 
-  const chipArray = processWork(projectItem.progUsage);
+  const processWork = (array) => {
+    if(expanded) {
+      return (
+        (array.map(item => (
+        <div>
+          <Typography variant="body2" gutterBottom>
+            <ListItem>
+            {item}
+            </ListItem>
+          </Typography>
+        </div>
+      ))))
+    }
+  }
+
+
+  const chipArray = processArray(projectItem.progUsage);
+  const workArray = processArray(projectItem.workDone);
 
 
   return (
@@ -73,9 +132,17 @@ function ProjectCard(props) {
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
           {processProjectType(projectItem.type)}
-          <IconButton size="small" aria-label="more" className={classes.rightContent}>
+          <Tooltip title="More Information">
+          <IconButton size="small" aria-label="more" 
+          className={clsx(classes.expand, {
+            [classes.expandOpen]: expanded,
+          })}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          >
             <ExpandMoreIcon />
           </IconButton>
+          </Tooltip>
         </Typography>
         <Typography variant="h5" component="h2" className={classes.pos2}>
           {projectItem.title}
@@ -86,6 +153,11 @@ function ProjectCard(props) {
         <Typography variant="body2" component="p">
           {projectItem.description}
         </Typography>
+      </CardContent>
+      <Collapse in={expanded} timeout="auto" unmountOnExit></Collapse>
+      <CardContent>
+          {addTypeTitle(projectItem.type)}
+          {processWork(workArray)}
       </CardContent>
       <CardActions className={classes.root}>
         {processChips(chipArray)}

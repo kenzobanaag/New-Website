@@ -117,7 +117,7 @@ function Projects() {
             description: '',
             date: 'Sept 2019 - Dec 2019',
             workDone: {
-                work1: 'Created black box test suites and cases to find and fix bugs',
+                work1: 'Created black box test suites and cases to locate and fix bugs',
                 work2: 'Implemented checks that find irregularities in a java code file',
             },
             type: 0,
