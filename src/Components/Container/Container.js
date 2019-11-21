@@ -9,9 +9,9 @@ const container = () => {
     return(
         <React.Fragment>
             <CssBaseline/>
+            <Header/>
             <Container maxWidth="md">
-                <Header/>
-                <Body/>
+                <Body/>           
             </Container>
             <Contact/>
         </React.Fragment>
