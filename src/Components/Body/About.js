@@ -15,7 +15,6 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-
 function About() {
     const classes = useStyles();
 
@@ -27,12 +26,10 @@ function About() {
                     About
                 </Typography>
                 <Typography variant="body1">
-                    Hey, my name's Kenzo. I was born and raised in the Philippines and
-                    migrated to the United States 7 years ago.
-                    I enjoy creating different things like programs and music. 
-                    I also enjoy going to the gym.
-                    I am currently a senior in Washington State University Everett pursuing a degree
-                    in Software Engineering.
+                    Hey, i'm Kenzo, a Software Engineering senior at 
+                    Washington State University Everett. One of the things that I'm really passionate
+                    about is creating. I enjoy creating different things such as programs and music. On my 
+                    spare time I like sweating it out in the gym to unwind and keep myself healthy. 
                 </Typography>
             </div>
             </Paper>

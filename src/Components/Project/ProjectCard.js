@@ -55,9 +55,14 @@ function ProjectCard(props) {
   const classes = useStyles();
   const projectItem = props.item;
   const [expanded, setExpanded] = React.useState(false);
+  const [information, setInformation] = React.useState("More Information");
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
+    if(expanded)
+      setInformation("More Information");
+    else 
+      setInformation("Less Information");
   };
 
   
@@ -132,7 +137,7 @@ function ProjectCard(props) {
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
           {processProjectType(projectItem.type)}
-          <Tooltip title="More Information">
+          <Tooltip title={information}>
           <IconButton size="small" aria-label="more" 
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,
