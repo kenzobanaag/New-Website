@@ -5,12 +5,6 @@ import { Typography } from '@material-ui/core';
 import ProjectCard from './ProjectCard';
 import Grid from '@material-ui/core/Grid';
 
-/*
-    TODO: Figure out how to show our project contributions
-          Not sure how much stress we need to put on that 
-          but we need to include it somewhere it is visible
-*/
-
 const useStyles = makeStyles(theme => ({
     paperRoot: {
         padding: theme.spacing(3, 2),
@@ -31,32 +25,33 @@ function Projects() {
         {
             title: 'Gym Tracker Mobile Application',
             description: 'Mobile application that tracks and creates daily gym activity' +
-                ' by allowing the user to dynamically input current and future workouts',
+                ' by allowing the user to dynamically input current and future workouts.',
             date: 'June 2019 - Present',
             //this is an object not an array!!!!
             workDone: {
-                work1: 'Implemented SQLite database for storing workout information',
+                work1: 'Implemented SQLite database for storing workout information.',
                 work2: 'Implemented workout sharing through sending text files with the use' +
-                    ' of third party applications such as Facebook Messenger and phone default text messaging',
-                work3: 'Integrated Material Design to create a more visually pleasing application',
+                    ' of third party applications such as Facebook Messenger and phone default text messaging.',
+                work3: 'Integrated Material Design to create a more visually pleasing application.',
             },
             //0 group, 1 is personal
             type: 1,
             progUsage: {
                 prog1: 'Java',
-                prog2: 'Android Studio',
+                prog2: 'Android',
                 prog3: 'SQLite'
             }
         },
         {
             title: 'Survey Campaign Manager',
-            description: 'A Microsoft sponsored survey campaign manager that helps users',
+            description: 'A Microsoft sponsored web-based survey campaign manager that' + 
+            ' allows the initiator to design and build web-based surveys.',
             date: 'Sept 2019 - May 2020',
             workDone: {
                 work1: 'Developed front end prototype capable of processing json data' +
                     ' converting it to essential information for processing and presentation.',
-                work2: 'Integrated material-ui to front end improving site aesthetics and functionality',
-                work3: 'Designed survey and survey result data contract',
+                work2: 'Integrated material-ui to front end improving site aesthetics and functionality.',
+                work3: 'Designed survey and survey result data contract.',
             },
             type: 0,
             progUsage: {
@@ -71,13 +66,13 @@ function Projects() {
         {
             title: 'Yelp Database',
             description: 'Client based data search application capable of searching yelp' +
-                ' users and businesses from a local database',
+                ' users and businesses from a local database.',
             date: 'Feb 2019 - April 2019',
             workDone: {
-                work1: 'Implmented Bing Maps Toolkit for location mapping and distance calculations',
-                work2: 'Constructed basic SQL queries capable of pulling out necessary information from the database',
-                work3: 'Utilized DBMS principles to construct database relations from the ER models and diagrams',
-                work4: 'Designed and developed the front end user interface'
+                work1: 'Implmented Bing Maps Toolkit for location mapping and distance calculations.',
+                work2: 'Constructed basic SQL queries capable of pulling out necessary information from the database.',
+                work3: 'Utilized DBMS principles to construct database relations from the ER models and diagrams.',
+                work4: 'Designed and developed the front end user interface.'
             },
             type: 0,
             progUsage: {
@@ -88,26 +83,27 @@ function Projects() {
         {
             title: 'Blind Navigation App',
             description: 'A mobile navigation application designed to help visually impared individuals to' +
-            ' navigate the rooms of Washington State University Everett',
+            ' navigate the rooms of Washington State University Everett.',
             date: 'Sept 2019 - Dec 2019',
             workDone: {
-                work1: "Integrated text to speech and speech to text android API's",
-                work2: 'Created and designed application user interface',
+                work1: "Integrated text to speech and speech to text android API's.",
+                work2: 'Created and designed application user interface.',
             },
             type: 0,
             progUsage: {
                 prog1: 'Java',
-                prog2: 'Android Studio',
+                prog2: 'Android',
             }
         },
         {
             title: 'Youtube Analyzer',
-            description: '',
+            description: 'An client based application that provides basic data analytics' + 
+            ' functions to YouTube meadia datasets.',
             date: 'Sep 2019 - Dec 2019',
             workDone: {
-                work1: 'Created a parser capable of parsing large amounts of unequally lengthed text files to csv',
-                work2: 'Processed high volume csv files to create graph nodes and relations',
-                work3: 'Built cypher queries to single out targeted information',
+                work1: 'Created a parser capable of parsing large amounts of unequally lengthed text files to csv.',
+                work2: 'Processed high volume csv files to create graph nodes and relations.',
+                work3: 'Built cypher queries to single out targeted information.',
             },
             type: 0,
             progUsage: {
@@ -118,11 +114,13 @@ function Projects() {
         },
         {
             title: 'Checkstyle Plugin',
-            description: '',
+            description: 'An application that extends a checkstyle plugin used to detect' + 
+            ' structural metrics in a java code file. The plugin checks and validates that a code file' +
+            ' follows a specific coding standard.',
             date: 'Sept 2019 - Dec 2019',
             workDone: {
-                work1: 'Created black box test suites and cases to locate and fix bugs',
-                work2: 'Implemented checks that find irregularities in a java code file',
+                work1: 'Created black box test suites and cases to locate and fix bugs.',
+                work2: 'Implemented checks that find irregularities in a java code file.',
             },
             type: 0,
             progUsage: {
