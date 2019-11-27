@@ -6,8 +6,6 @@ import EmailIcon from '@material-ui/icons/Email';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
-import Popover from '@material-ui/core/Popover';
-import { Typography } from '@material-ui/core'
 import Container from '@material-ui/core/Container'
 import SubjectIcon from '@material-ui/icons/Subject';
 import Tooltip from '@material-ui/core/Tooltip'
@@ -38,49 +36,36 @@ function Contact() {
 
     const classes = useStyles();
 
-    const [anchorEl, setAnchorEl] = React.useState(null);
-
-    const handleClick = event => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-
-    const open = Boolean(anchorEl);
-    const id = open ? 'simple-popover' : undefined;
-
     return (
-        <React.Fragment>
+        <div>
             <div className={classes.root}>
             <Container maxWidth="sm">
                 <Grid container >
                     <Grid item sm={3} >
                         <Link href="https://www.linkedin.com/in/kenzo-banaag-767a3b15b/" target="_blank" rel="noopener noreferrer">
-                            <IconButton size="large">
+                            <IconButton size="medium">
                                 <LinkedInIcon fontSize="large" />
                             </IconButton>
                         </Link>
                     </Grid>
                     <Grid item sm={3}>
                         <Link href="https://github.com/kenzobanaag" target="_blank" rel="noopener noreferrer">
-                            <IconButton size="large" >
+                            <IconButton size="medium" >
                                 <GitHubIcon fontSize="large" />
                             </IconButton>
                         </Link>
                     </Grid>
                     <Grid item sm={3}>
                     <Link href="mailto:kenzobanaag@gmail.com" rel="noopener noreferrer">
-                        <IconButton size="large">
-                            <EmailIcon fontSize="large" onClick={handleClick}/>
+                        <IconButton size="medium">
+                            <EmailIcon fontSize="large"/>
                         </IconButton>
                         </Link>
                     </Grid>
                     <Grid item sm={3}>
                     <Link href="/Resume.pdf" target="_blank" rel="noopener noreferrer">
                         <Tooltip title="Resume">
-                        <IconButton size="large">
+                        <IconButton size="medium">
                             <SubjectIcon fontSize="large" />
                         </IconButton>
                         </Tooltip>
@@ -89,25 +74,7 @@ function Contact() {
                 </Grid>
                 </Container>
             </div>
-            <Popover
-                id={id}
-                open={open}
-                anchorEl={anchorEl}
-                onClose={handleClose}
-                anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'center',
-                }}
-                transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'center',
-                }}
-            >
-                <Typography className={classes.control}>
-                    kenzobanaag@gmail.com
-                </Typography>
-            </Popover>
-        </React.Fragment>
+        </div>
     );
 }
 

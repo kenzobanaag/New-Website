@@ -11,8 +11,6 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Collapse from '@material-ui/core/Collapse';
 import clsx from 'clsx';
 import ListItem from '@material-ui/core/ListItem'
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import CodeIcon from '@material-ui/icons/Code'
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -105,9 +103,10 @@ function ProjectCard(props) {
   }
 
   const processChips = (array) => {
-    return (array.map(item => (
+    return (array.map((item, index) => (
         <Chip
           label={item}
+          key={index}
         />
     )))
   }
@@ -115,10 +114,10 @@ function ProjectCard(props) {
   const processWork = (array) => {
     if(expanded) {
       return (
-        (array.map(item => (
+        (array.map((item,index) => (
         <div>
           <Typography variant="body2" gutterBottom>
-            <ListItem>
+            <ListItem key={index}>
             {item}
             </ListItem>
           </Typography>

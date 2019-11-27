@@ -83,7 +83,7 @@ function LangList(props) {
             },
             {
                 title: 'Firebase',
-                proficiency: 0,
+                proficiency: -1,
             }
         ],
         [//concepts
@@ -96,7 +96,8 @@ function LangList(props) {
                 proficiency: 1
             },
             {
-                title: 'Requirements Engineering',
+                title: 'Requirements Engineering, Desing Engineering, Quality Assurance and' + 
+                ' Risk Control',
                 proficiency: 0
             },
             {

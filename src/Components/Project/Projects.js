@@ -60,7 +60,6 @@ function Projects() {
                 prog3: 'ExpressJS',
                 prog4: 'MongoDB',
                 prog5: 'Azure CosmosDB',
-                prog6: 'AWS Amplify',
             }
         },
         {
@@ -72,7 +71,7 @@ function Projects() {
                 work1: 'Implmented Bing Maps Toolkit for location mapping and distance calculations.',
                 work2: 'Constructed basic SQL queries capable of pulling out necessary information from the database.',
                 work3: 'Utilized DBMS principles to construct database relations from the ER models and diagrams.',
-                work4: 'Designed and developed the front end user interface.'
+                work4: 'Designed and developed the front end user interface and back end database communication.'
             },
             type: 0,
             progUsage: {
@@ -81,13 +80,14 @@ function Projects() {
             }
         },
         {
-            title: 'Blind Navigation App',
-            description: 'A mobile navigation application designed to help visually impared individuals to' +
+            title: 'Blind Navigation Application',
+            description: 'A mobile navigation application designed to help visually impaired individuals to' +
             ' navigate the rooms of Washington State University Everett.',
             date: 'Sept 2019 - Dec 2019',
             workDone: {
                 work1: "Integrated text to speech and speech to text android API's.",
                 work2: 'Created and designed application user interface.',
+                work3: "Integrated team member's designated tasks to a functional prototype."
             },
             type: 0,
             progUsage: {
