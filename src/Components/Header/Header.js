@@ -6,6 +6,7 @@ import Container from '@material-ui/core/Container'
 
 /* 
     TODO: Have a toggle button on top to toggle dark and light mode
+          Have some pictures to show i guess?
 */
 const useStyles = makeStyles(theme => ({
     root: {
@@ -23,8 +24,6 @@ const useStyles = makeStyles(theme => ({
 function Header () {
 
     const classes = useStyles();
-
-
 
     return(
         <React.Fragment>

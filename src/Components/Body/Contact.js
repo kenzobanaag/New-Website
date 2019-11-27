@@ -13,9 +13,8 @@ import SubjectIcon from '@material-ui/icons/Subject';
 import Tooltip from '@material-ui/core/Tooltip'
 
 /* 
-    TODO: We want a footer like contact section
-    With links to our github, linkedin, email as well.
-    Also include a link to our resume.
+    TODO: Fix mobile version of this footer. 
+          Decide if we really need a pop over as opposed to a tooltip on email
 */
 
 const useStyles = makeStyles(theme => ({
@@ -82,7 +81,7 @@ function Contact() {
                     <Link href="/Resume.pdf" target="_blank" rel="noopener noreferrer">
                         <Tooltip title="Resume">
                         <IconButton size="large">
-                            <SubjectIcon fontSize="large"/>
+                            <SubjectIcon fontSize="large" />
                         </IconButton>
                         </Tooltip>
                         </Link>

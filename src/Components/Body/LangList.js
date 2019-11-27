@@ -8,6 +8,7 @@ import ListItemText from '@material-ui/core/ListItemText'
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItem from '@material-ui/core/ListItem';
 
+
 //pass in a index in props
 function LangList(props) {
 
@@ -118,7 +119,8 @@ function LangList(props) {
         return (arrayItem.map((item, index) => (
             <ListItem key={index}>
                 <ListItemAvatar>
-                    <Avatar style={{ height: 35, width: 35 }}>
+                    {/* backgroundColor: '#3700B3' */}
+                    <Avatar style={{ height: 35, width: 35,}}>
                         {proficiencyHandler(item.proficiency)}
                     </Avatar>
                 </ListItemAvatar>

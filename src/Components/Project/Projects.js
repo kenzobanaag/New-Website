@@ -50,7 +50,7 @@ function Projects() {
             workDone: {
                 work1: 'Developed front end prototype capable of processing json data' +
                     ' converting it to essential information for processing and presentation.',
-                work2: 'Integrated material-ui to front end improving site aesthetics and functionality.',
+                work2: 'Integrated material-ui to front end, improving site aesthetics and functionality.',
                 work3: 'Designed survey and survey result data contract.',
             },
             type: 0,
@@ -97,8 +97,8 @@ function Projects() {
         },
         {
             title: 'Youtube Analyzer',
-            description: 'An client based application that provides basic data analytics' + 
-            ' functions to YouTube meadia datasets.',
+            description: 'A client based application that provides basic data analytics' + 
+            ' functions to YouTube media datasets.',
             date: 'Sep 2019 - Dec 2019',
             workDone: {
                 work1: 'Created a parser capable of parsing large amounts of unequally lengthed text files to csv.',
@@ -127,6 +127,22 @@ function Projects() {
                 prog1: 'Java',
             }
         },
+        {
+            title: 'This Personal Website',
+            description: 'Personal website built with the basics of ReactJS and'+
+            ' material-ui.' ,
+            date: 'Nov 2019 - Nov 2019',
+            workDone: {
+                work1: 'Integrated material-ui to front end, improving site aesthetics and functionality.',
+                work2: 'Integrated AWS Amplify web hosting to allow online deployment.',
+            },
+            type: 1,
+            progUsage: {
+                prog1: 'JavaScript',
+                prog2: 'ReactJS',
+                prog3: 'AWS Amplify',
+            }
+        },
 
     ]
 
@@ -136,7 +152,7 @@ function Projects() {
                 <Typography variant="h5" className={classes.seperation}>
                     Projects
                 </Typography>
-                {/* Grid here? */}
+                {/* Could use a map here but probably not worth the work right now*/}
                 <div className={classes.root}> 
                 <Grid container spacing={3} >
                     <Grid item sm={6} >
@@ -156,6 +172,9 @@ function Projects() {
                     </Grid>
                     <Grid item sm={6}>
                         <ProjectCard item={stateList[5] } />
+                    </Grid>
+                    <Grid item sm={6}>
+                        <ProjectCard item={stateList[6] } />
                     </Grid>
                 </Grid>
                 </div>
